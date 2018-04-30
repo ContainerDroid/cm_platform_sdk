@@ -21,6 +21,7 @@
     <uses-permission android:name="cyanogenmod.permission.READ_ALARMS" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE" />
     <uses-permission android:name="cyanogenmod.permission.READ_MSIM_PHONE_STATE" />
+    <uses-permission android:name="cyanogenmod.permission.CONTAINER_SAY_HELLO" />
     <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_PROFILES" />
     <uses-permission android:name="cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE" />

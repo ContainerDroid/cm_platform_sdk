@@ -78,6 +78,17 @@ public final class CMContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.app.ContainerManager} to manage the Docker containers.
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.app.ContainerManager
+     *
+     * @hide
+     */
+    public static final String CM_CONTAINER_MANAGER_SERVICE = "cmcontainermanager";
+
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link cyanogenmod.hardware.CMHardwareManager} to manage the extended
      * hardware features of the device.
      *
@@ -189,6 +200,14 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String TELEPHONY = "org.cyanogenmod.telephony";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the cm container service
+         * utilized by the cmsdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String CONTAINERS = "org.cyanogenmod.containers";
 
         /**
          * Feature for {@link PackageManager#getSystemAvailableFeatures} and

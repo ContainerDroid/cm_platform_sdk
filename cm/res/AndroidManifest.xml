@@ -80,6 +80,14 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
+    <!-- Allows a 3rd party to make the ContainerService say hello
+         TODO: fix strings!!! -->
+    <permission android:name="cyanogenmod.permission.CONTAINER_SAY_HELLO"
+                android:label="@string/permlab_modifyMSPhoneState"
+                android:description="@string/permdesc_modifyMSPhoneState"
+                android:icon="@drawable/ic_launcher_cyanogenmod"
+                android:protectionLevel="normal" />
+
     <!-- Allows an application access to the CM hardware abstraction framework
         <p>Not for use by third-party applications. -->
     <permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS"

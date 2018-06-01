@@ -40,7 +40,8 @@ LOCAL_MODULE_TAGS := optional
 cmsdk_LOCAL_JAVA_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-recyclerview \
-    android-support-v14-preference
+    android-support-v14-preference \
+    docker-client
 
 LOCAL_JAVA_LIBRARIES := \
     services \
@@ -106,6 +107,15 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 
 include $(BUILD_PREBUILT)
+
+########################
+
+include $(CLEAR_VARS)
+
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES += \
+         docker-client:prebuilt/docker-client-8.11.4.jar
+
+include $(BUILD_MULTI_PREBUILT)
 
 # the sdk
 # ============================================================

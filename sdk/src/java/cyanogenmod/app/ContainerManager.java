@@ -1,3 +1,4 @@
+/* vim: set tabstop=4 shiftwidth=4 expandtab: */
 package cyanogenmod.app;
 
 import android.content.Context;
@@ -85,6 +86,7 @@ public class ContainerManager {
             String pkg = mContext.getPackageName();
             Log.v(TAG, pkg + " ContainerManager: sayHelloTo " + msg + " called!");
         }
+
         try {
             sService.sayHelloTo(msg);
         } catch (RemoteException e) {

@@ -1,3 +1,4 @@
+/* vim: set tabstop=4 shiftwidth=4 expandtab: */
 package org.cyanogenmod.platform.internal;
 
 import com.android.server.SystemService;
@@ -12,6 +13,9 @@ import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.ContainerManager;
 import cyanogenmod.app.IContainerManager;
 
+import com.spotify.docker.client.*;
+import com.spotify.docker.client.exceptions.*;
+
 /**
  * Internal service which manages interactions with the phone and data connection
  *
@@ -20,6 +24,7 @@ import cyanogenmod.app.IContainerManager;
 public class ContainerManagerService extends CMSystemService {
     private static final String TAG = "ContainerManagerSrv";
     private static boolean localLOGD = Log.isLoggable(TAG, Log.DEBUG);
+    private DockerClient docker;
 
     private Context mContext;
     private final IBinder mService = new IContainerManager.Stub() {
@@ -34,6 +39,12 @@ public class ContainerManagerService extends CMSystemService {
     public ContainerManagerService(Context context) {
         super(context);
         mContext = context;
+        try {
+            docker = DefaultDockerClient.fromEnv().build();
+            Log.d(TAG, "Initialized Docker client: " + docker);
+        } catch (DockerCertificateException e) {
+            Log.e(TAG, "Could not initialize Docker client");
+        }
     }
 
     @Override
